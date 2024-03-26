@@ -11,28 +11,28 @@ const allSongs = [
     title: "Deep Focus 113552",
     artist: "Pixabay",
     duration: "3:01",
-    src: "",
+    src: "music\deep-focus-113552.mp3",
   },
   {
     id: 1,
     title: "Empty Mind 118973",
     artist: "Pixabay",
     duration: "2:55",
-    src: "",
+    src: "music\empty-mind-118973.mp3",
   },
   {
     id: 2,
     title: "Good Night 160166",
     artist: "Pixabay",
     duration: "2:27",
-    src: "",
+    src: "music\good-night-160166.mp3",
   },
   {
     id: 3,
     title: "Little Break Lofi Beat 125830",
     artist: "Pixabay",
     duration: "2:00",
-    src: ""
+    src: "music/little-break-lofi-beat-125830.mp3"
   }
 
 
