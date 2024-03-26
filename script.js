@@ -11,28 +11,28 @@ const allSongs = [
     title: "Deep Focus 113552",
     artist: "Pixabay",
     duration: "3:01",
-    src: "music\deep-focus-113552.mp3?raw=true",
+    src: "https://github.com/mtaylorgit/mymusicplayer/blob/main/music/deep-focus-113552.mp3?raw=true",
   },
   {
     id: 1,
     title: "Empty Mind 118973",
     artist: "Pixabay",
     duration: "2:55",
-    src: "music\empty-mind-118973.mp3?raw=true",
+    src: "https://github.com/mtaylorgit/mymusicplayer/blob/main/music/empty-mind-118973.mp3?raw=true",
   },
   {
     id: 2,
     title: "Good Night 160166",
     artist: "Pixabay",
     duration: "2:27",
-    src: "music\good-night-160166.mp3?raw=true",
+    src: "https://github.com/mtaylorgit/mymusicplayer/blob/main/music/good-night-160166.mp3?raw=true",
   },
   {
     id: 3,
     title: "Little Break Lofi Beat 125830",
     artist: "Pixabay",
     duration: "2:00",
-    src: "music/little-break-lofi-beat-125830.mp3?raw=true"
+    src: "https://github.com/mtaylorgit/mymusicplayer/blob/main/music/little-break-lofi-beat-125830.mp3?raw=true"
   }
 
 
