@@ -8,35 +8,76 @@ const shuffleButton = document.getElementById("shuffle");
 const allSongs = [
   {
     id: 0,
-    title: "Deep Focus 113552",
-    artist: "Pixabay",
-    duration: "3:01",
-    src: "https://github.com/mtaylorgit/mymusicplayer/blob/main/music/deep-focus-113552.mp3?raw=true",
+    title: "Scratching The Surface",
+    artist: "Quincy Larson",
+    duration: "4:25",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/scratching-the-surface.mp3",
   },
   {
     id: 1,
-    title: "Empty Mind 118973",
-    artist: "Pixabay",
-    duration: "2:55",
-    src: "https://github.com/mtaylorgit/mymusicplayer/blob/main/music/empty-mind-118973.mp3?raw=true",
+    title: "Can't Stay Down",
+    artist: "Quincy Larson",
+    duration: "4:15",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/cant-stay-down.mp3",
   },
   {
     id: 2,
-    title: "Good Night 160166",
-    artist: "Pixabay",
-    duration: "2:27",
-    src: "https://github.com/mtaylorgit/mymusicplayer/blob/main/music/good-night-160166.mp3?raw=true",
+    title: "Still Learning",
+    artist: "Quincy Larson",
+    duration: "3:51",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/still-learning.mp3",
   },
   {
     id: 3,
-    title: "Little Break Lofi Beat 125830",
-    artist: "Pixabay",
-    duration: "2:00",
-    src: "https://github.com/mtaylorgit/mymusicplayer/blob/main/music/little-break-lofi-beat-125830.mp3?raw=true"
-  }
-
-
+    title: "Cruising for a Musing",
+    artist: "Quincy Larson",
+    duration: "3:34",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/cruising-for-a-musing.mp3",
+  },
+  {
+    id: 4,
+    title: "Never Not Favored",
+    artist: "Quincy Larson",
+    duration: "3:35",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/never-not-favored.mp3",
+  },
+  {
+    id: 5,
+    title: "From the Ground Up",
+    artist: "Quincy Larson",
+    duration: "3:12",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/from-the-ground-up.mp3",
+  },
+  {
+    id: 6,
+    title: "Walking on Air",
+    artist: "Quincy Larson",
+    duration: "3:25",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/walking-on-air.mp3",
+  },
+  {
+    id: 7,
+    title: "Can't Stop Me. Can't Even Slow Me Down.",
+    artist: "Quincy Larson",
+    duration: "3:52",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/cant-stop-me-cant-even-slow-me-down.mp3",
+  },
+  {
+    id: 8,
+    title: "The Surest Way Out is Through",
+    artist: "Quincy Larson",
+    duration: "3:10",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/the-surest-way-out-is-through.mp3",
+  },
+  {
+    id: 9,
+    title: "Chasing That Feeling",
+    artist: "Quincy Larson",
+    duration: "2:43",
+    src: "https://s3.amazonaws.com/org.freecodecamp.mp3-player-project/chasing-that-feeling.mp3",
+  },
 ];
+
 const audio = new Audio();
 let userData = {
   songs: [...allSongs],
@@ -117,7 +158,22 @@ const deleteSong = (id) => {
   setPlayButtonAccessibleText(); 
 
   if (userData?.songs.length === 0) {
-  
+    const resetButton = document.createElement("button");
+    const resetText = document.createTextNode("Reset Playlist");
+
+    resetButton.id = "reset";
+    resetButton.ariaLabel = "Reset playlist";
+    resetButton.appendChild(resetText);
+    playlistSongs.appendChild(resetButton);
+
+    resetButton.addEventListener("click", () => {
+      userData.songs = [...allSongs];
+
+      renderSongs(sortSongs()); 
+      setPlayButtonAccessibleText();
+      resetButton.remove();
+    });
+
   }
 
 };
@@ -193,6 +249,8 @@ nextButton.addEventListener("click", playNextSong);
 previousButton.addEventListener("click", playPreviousSong);
 
 shuffleButton.addEventListener("click", shuffle);
+
+audio.addEventListener("ended", ()=> {});
 
 const sortSongs = () => {
   userData?.songs.sort((a,b) => {
